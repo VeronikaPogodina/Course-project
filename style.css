@@ -98,7 +98,33 @@ body {
 .logo_icon {
     max-width: 172px;
 }
+@media (max-width: 375px) {
+    .menu {
+        display: none;
+    }
 
+    .header_button_application {
+        display: none;
+    }
+
+    .options {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 17px 14px 15px 20px;
+        height: auto;
+    }
+
+    .logo_icon {
+        width: 126px;
+    }
+
+}
 /* style preview
 ///////////////////////// */
 .preview {
@@ -123,10 +149,10 @@ body {
 
 .preview_content {
   position: absolute;
-  top: 18%;
-  left: 7%;
+  top: 24%;
+  left: 16%;
   z-index: 2;
-  padding: 32px 40px;
+  /* padding: 32px 40px; */
   border-radius: 12px;
   color: #fff;
   display: flex;
@@ -158,10 +184,47 @@ body {
     display: flex;
     align-items: center;
     position: relative;
+    cursor: pointer;
 }
 
 .button_cost_calculation {
     width: 293px;
+}
+
+@media (max-width: 375px) {
+    .preview_title {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .preview_content {
+        left: calc((100% - 293px) / 2);
+        align-items: center;
+    }
+
+    .preview {
+        height: auto;
+    }
+
+    .preview_subtitle {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .preview_img {
+        width: 100%;
+        height: 649px;
+        border-radius: 0;
+    }
+
+    .preview::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    }
+
 }
 
 
@@ -182,11 +245,13 @@ body {
     position: relative;
     padding-top: 90px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .page_title_left_align {
-    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .page_title_top_padding {
@@ -347,7 +412,8 @@ body {
 
 .custom_file_upload {
     display: inline-block;
-    padding: 15px 93px;
+    padding: 15px 0;
+    width: 100%;
     border: 1px dashed #FFFFFF26;
     border-radius: 10px;
     font: 15px "Raleway_Regular", sans-serif;
@@ -374,14 +440,69 @@ body {
 }
 
 .upload_header_wrapper {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 34px 0 14px 0;
 }
 
-/* style advantages
-//////////////////// */
+.upload_file_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 375px) {
+    .man_img {
+        display: none;
+    }
+
+    .steps {
+        left: calc((100% - 262px) / 2)
+    }
+
+    .page_title {
+        font-size: 24px;
+        margin-top: 55px;
+        width: 335px;
+    }
+
+    .form {
+        width: 335px;
+        padding: 70px 0 41px 0;
+        align-items: center;
+    }
+
+    .form_row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .upload_header_wrapper {
+        max-width: 248px;
+    }
+
+    .custom_file_upload {
+        max-width: 248px;
+        padding: 12px 0;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    .title_highlight {
+        top: 25px;
+        left: 145px;
+    }
+}
+
+ /* style advantages
+//////////////////////// */
 
 .advantages {
     background-color: #363A4D;
@@ -440,7 +561,13 @@ body {
 }
 
 
-/* style delivery_options
+@media (max-width: 375px) {
+    .advantage_item_wrapper {
+        max-width: 100%;
+    }
+}
+
+/* style cargo_delivery_options
 ////////////////////////// */
 
 .delivery_options {
@@ -528,8 +655,74 @@ body {
     cursor: pointer;
 }
 
+.delivery_options_slider {
+    display: none;
+}
+
 /* style services
 ///////////////////////////////// */
+
+.service_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card_content {
+    max-width: 307px;
+}
+
+.service_card {
+  position: relative;
+  width: 360px;
+  height: 482px;
+  background: center/cover url('./img/service_1.png');
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.service_card_insurance {
+    background: center/cover url('./img/service_2.png');
+}
+
+.service_card_rent {
+    background: center/cover url('./img/service_3.png');
+}
+
+.service_card_transfer {
+    background: center/cover url('./img/service_4.png');
+    display: none;
+}
+
+.service_card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0));
+}
+
+.card_content {
+  position: relative;
+  color: #fff;
+  padding: 30px;
+  z-index: 1;
+}
+
+.card_title {
+  font: 22px "Raleway_Bold", sans-serif;
+  margin-bottom: 13px;
+}
+
+.card_description {
+  font: 15px "Raleway_Regular", sans-serif;
+  line-height: 125%;
+  margin-bottom: 14px;
+  width: 307px;
+}
 
 /* style about_company
 ///////////////////////////////// */
@@ -619,6 +812,7 @@ body {
     display: flex;
     align-items: center;
     position: relative;
+    cursor: pointer;
 }
 
 .brown_arrow_icon {
@@ -639,3 +833,173 @@ body {
     height: 56px;
     border-radius: 10px;
 }
+
+
+/* style partnerhsip
+///////////////////////////////// */
+
+
+.partnerhsip {
+background-color: #363A4D;
+}
+
+.partnerhsip_img {
+    width: 555px;
+    border-radius: 20px;
+}
+
+.partnerhsip_desc {
+    max-width: 555px;
+    list-style: circle;
+}
+
+.partnerhsip_desc_item {
+    font: 17px  "Raleway_Regular";
+    line-height: 157%;
+    padding-bottom: 40px;
+}
+
+.partnerhsip_desc_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 75px;
+}
+
+.partnerhsip_desc_sub_wrapper {
+    gap: 62px;
+    padding-bottom: 100px;
+}
+
+.button_process_cargo {
+    font: 16px "Raleway_SemiBold", sans-serif;
+    width: 243px;
+    padding: 22px 0 22px 33px;
+    border-radius: 90px;
+    background-color: #E58D35;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.partnerhsip_subtitle {
+    font: 24px "Raleway_Regular";
+    line-height: 125%;
+    display: flex;
+    justify-content: center;
+    text-transform: none;
+    padding-top: 15px;
+}
+
+
+
+
+/* style footer
+////////////////////////// */
+
+.main_inf_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.social_networks {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 60px;
+}
+
+.main_inf {
+    padding: 28px 90px 20px 0;
+    font: 14px "Raleway_Regular";
+    line-height: 163%;
+}
+
+.footer_email {
+    display: block;
+    text-decoration: underline;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footer_links_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.footer_links_head {
+    font: 20px "Raleway_Bold";
+    line-height: 146%;
+    margin-bottom: 14px;
+}
+
+.footer_links_item {
+    margin-bottom: 6px;
+}
+
+.footer_links_item a {
+    font: 16px "Raleway_Regular";
+    line-height: 161%;
+    color: #85899C;
+}
+
+/* .footer_highlight {
+    display: block;
+    max-width: 1140px;
+    height: 2px;
+    background-color: #E58D35;
+
+} */
+
+    .slider_wrapper {
+        height: 500px;
+    }
+
+    swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    swiper-slide {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-pagination {
+        bottom: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+
+    .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        background-color: red;
+        opacity: 1;
+        border-radius: 50%;
+        transition: background-color 0.3s ease;
+    }
+
+.swiper-pagination-bullet-active {
+  background-color: #E58D35;
+}
+
+
+    /* swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    } */
