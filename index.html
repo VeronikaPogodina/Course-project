@@ -11,64 +11,84 @@
 
 <body>
   <header class="header">
-    <img src="/icons/logo.png" class="logo_icon">
-    <nav class="menu">
-      <ul class="menu_list">
-        <li class="menu_item">Цены и сроки</li>
-        <li class="menu_item">Услуги</li>
-        <li class="menu_item">О компании</li>
-        <li class="menu_item">Контакты</li>
-        <li class="menu_item">Оформить груз</li>
+    <img src="/icons/logo.png" class="header_logo_icon">
+    <nav class="header_nav_menu">
+      <ul class="header_nav_menu_list">
+        <li class="header_nav_menu_item"> <a class="header_nav_menu_item_link" href="#prices_and_deadlines">Цены и сроки</a></li>
+        <li class="header_nav_menu_item"> <a class="header_nav_menu_item_link" href="#services">Услуги</a></li>
+        <li class="header_nav_menu_item"> <a class="header_nav_menu_item_link" href="#about_company">О компании</a></li>
+        <li class="header_nav_menu_item"> <a class="header_nav_menu_item_link" href="#contacts">Контакты</a></li>
+        <li class="header_nav_menu_item"> <a class="header_nav_menu_item_link" href="#process_the_cargo">Оформить груз</a></li>
       </ul>
     </nav>
-    <button class="header_button_application">Оставить заявку</button>
-    <img src="./icons/menu.svg" class="options" />
+    <button class="header_button_application button_disappear">Оставить заявку</button>
+    <button type="button" class="burger_menu_icon_wrapper">
+      <img src="./icons/menu.svg" class="burger_menu_icon" />
+    </button>
+
+    <div class="header_nav_menu_mobile_wrapper">
+      <nav class="header_nav_menu_mobile">
+        <ul class="header_nav_menu_list_mobile">
+          <li class="header_nav_menu_item_mobile">Цены и сроки</li>
+          <li class="header_nav_menu_item_mobile">Услуги</li>
+          <li class="header_nav_menu_item_mobile">О компании</li>
+          <li class="header_nav_menu_item_mobile">Контакты</li>
+          <li class="header_nav_menu_item_mobile">Оформить груз</li>
+        </ul>
+      </nav>
+      <button class="button_next_step button_cost_calculation">
+        Рассчитать стоимость
+        <img src="./icons/brown_arrow.svg" class="brown_arrow_icon" />
+      </button>    
+    </div>
   </header>
 
+
+
   <section class="preview">
-    <img src="./img/preview.png" alt="Preview" class="preview_img">
+    <img src="./img/preview.png" alt="Preview" class="preview_background_img">
     <div class="preview_content">
       <h1 class="preview_title">Прямое КАРГО<br> из Китая</h1>
       <span class="preview_subtitle">Доставляем любые грузы из Китая<br> по честной цене</span>
-      <button class="button_next_step button_cost_calculation">Рассчитать стоимость
+      <button class="button_next_step button_cost_calculation" href="#prices_and_deadlines">Рассчитать стоимость
         <img src="./icons/brown_arrow.svg" class="brown_arrow_icon" />
       </button>
     </div>
   </section>
 
 
-  <section class="cost_calculation">
+  <section class="cost_calculation_section">
     <div>
-      <h2 class="page_title page_title_left_align page_title_top_padding">
-        Получить расчет стоимости<br> доставки вашего груза
-        <div class="title_highlight" />
+      <h2 class="cost_calculation_title" id="prices_and_deadlines">
+        Получить расчет стоимости доставки вашего груза
       </h2>
-      <form class="form">
+      <form class="cost_calculation_form">
         <div class="steps">
           <div class="step" id="active_step">1</div>
           <div class="step">2</div>
           <div class="step">3</div>
         </div>
-        <div class="form_rows">
-          <div class="form_row">
+        <div class="cost_calculation_form_rows">
+          <div class="cost_calculation_form_row">
             <div class="form_input_wrapper">
               <label for="product_category">
                 <span class="form_input_name">Категория товара:</span>
-                <input type="text" placeholder="Категория товара" class="form_input" name="product_category">
+                <input type="text" placeholder="Категория товара" class="cost_calculation_input"
+                  name="product_category">
               </label>
             </div>
             <div class="form_input_wrapper">
               <label for="cargo_cost">
                 <span class="form_input_name">Стоимость груза:</span>
-                <input type="number" placeholder="Введите стоимость" class="form_input" name="cargo_cost">
+                <input type="number" placeholder="Введите стоимость" class="cost_calculation_input" name="cargo_cost">
               </label>
             </div>
           </div>
-          <div class="form_row">
+          <div class="cost_calculation_form_row">
             <div class="form_input_wrapper">
               <label for="cargo_weight">
                 <span class="form_input_name">Вес груза (кг):</span>
-                <input type="number" placeholder="Введите вес" class="form_input" name="cargo_weight">
+                <input type="number" placeholder="Введите вес" class="cost_calculation_input" name="cargo_weight">
               </label>
             </div>
             <div class="form_input_wrapper">
@@ -77,11 +97,11 @@
                   <span class="form_input_name">Объем груза (м3):</span>
                   <a href="#" class="calculate_volume_button">Рассчитать</a>
                 </div>
-                <input type="number" placeholder="Введите объем" class="form_input" name="сargo_volume">
+                <input type="number" placeholder="Введите объем" class="cost_calculation_input" name="сargo_volume">
               </label>
             </div>
           </div>
-          <div class="form_row">
+          <div class="cost_calculation_form_row">
             <div class="cost_calculation_services_wrapper">
               <label class="custom_checkbox">
                 <input type="checkbox" name="services" value="insurance" class="cost_calculation_services">
@@ -97,7 +117,7 @@
             <div class="form_input_wrapper">
               <label for="hs_code">
                 <span class="form_input_name">Код ТН ВЭД:</span>
-                <input type="number" placeholder="Введите код" class="form_input" name="hs_code">
+                <input type="number" placeholder="Введите код" class="cost_calculation_input" name="hs_code">
               </label>
             </div>
           </div>
@@ -123,9 +143,8 @@
   </section>
 
   <section class="advantages">
-    <h2 class="page_title">
+    <h2 class="advantages_title">
       Почему стоит выбрать именно нас?
-      <div class="title_underline" />
     </h2>
     <div class="advantages_wrapper">
       <div class="advantage_item_wrapper">
@@ -202,10 +221,97 @@
     </div>
   </section>
 
+  <section class="advantage_slider">
+    <h2 class="advantages_title">
+      Почему стоит выбрать именно нас?
+    </h2>
+    <swiper-container class="mySwiper">
+      <swiper-slide>
+        <div class="advantage_item_wrapper">
+          <div class="advantage_border_wrapper">
+            <div class="advantage_icon">
+              <img src="./icons/adv_1.svg" />
+            </div>
+          </div>
+          <p class="advantge_name">Таможенное<br>оформление груза</p>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="advantage_item_wrapper">
+          <div class="advantage_border_wrapper">
+            <div class="advantage_icon">
+              <img src="./icons/adv_2.svg" />
+            </div>
+          </div>
+          <p class="advantge_name">Страховка груза</p>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="advantage_item_wrapper">
+          <div class="advantage_border_wrapper">
+            <div class="advantage_icon">
+              <img src="./icons/adv_3.svg" />
+            </div>
+          </div>
+          <p class="advantge_name">Проверка товара<br>на брак</p>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="advantage_item_wrapper">
+          <div class="advantage_border_wrapper">
+            <div class="advantage_icon">
+              <img src="./icons/adv_4.svg" />
+            </div>
+          </div>
+          <p class="advantge_name">Доставка<br>в любой город РФ</p>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="advantage_item_wrapper">
+          <div class="advantage_border_wrapper">
+            <div class="advantage_icon">
+              <img src="./icons/adv_5.svg" />
+            </div>
+          </div>
+          <p class="advantge_name">Консолидация<br>на складе</p>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="advantage_item_wrapper">
+          <div class="advantage_border_wrapper">
+            <div class="advantage_icon">
+              <img src="./icons/adv_6.svg" />
+            </div>
+          </div>
+          <p class="advantge_name">Ответственное<br>хранение груза</p>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="advantage_item_wrapper">
+          <div class="advantage_border_wrapper">
+            <div class="advantage_icon">
+              <img src="./icons/adv_7.svg" />
+            </div>
+          </div>
+          <p class="advantge_name">Помощь в<br>оплате товара</p>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="advantage_item_wrapper">
+          <div class="advantage_border_wrapper">
+            <div class="advantage_icon">
+              <img src="./icons/adv_8.svg" />
+            </div>
+          </div>
+          <p class="advantge_name">Упаковка, переупаковка,<br> паллетирование груза к<br> международной перевозке</p>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </section>
+
   <section class="cargo_delivery_options">
-    <h2 class="page_title">
+    <h2 class="advantages_title">
       Варианты доставки грузов из Китая
-      <div class="title_underline" />
     </h2>
     <div class="delivery_options swiper mySwiper">
       <img src="./icons/slider_start.svg" class="swiper-button-prev slider_arrow_icon" />
@@ -320,9 +426,8 @@
 
 
   <section class="services">
-    <h2 class="page_title">
+    <h2 class="advantages_title" id="services">
       Услуги
-      <div class="title_underline" />
     </h2>
     <div class="service_wrapper swiper mySwiper">
       <img src="./icons/slider_start.svg" class="swiper-button-prev slider_arrow_icon" />
@@ -371,9 +476,8 @@
 
   <section class="about_company">
     <div class="about_company_wrapper">
-      <h2 class="page_title page_title_left_align page_title_top_padding">
+      <h2 class="about_company_title" id="about_company">
         О компании
-        <div class="title_underline" />
       </h2>
       <p class="company_description_abstract">
         Компания Азия Карго - это полный комплекс логистических услуг по доставке грузов из Китая в Россию - сборные
@@ -390,57 +494,146 @@
   </section>
 
   <section class="questions_section">
-    <h2 class="page_title">
+    <h2 class="advantages_title">
       Часто задаваемые вопросы
-      <div class="title_underline" />
     </h2>
     <div class="content_wrapper">
       <div class="all_questions_wrapper">
-        <div class="question_wrapper">
-          <p>Как рассчитывается стоимость доставки?</p>
-          <button class="button_arrow">
-            <img src="./icons/arrow.svg" class="arrow_icon" />
-          </button>
-        </div>
-        <div class="question_wrapper">
-          <p>Как происходит оплата за доставку груза?</p>
-          <button class="button_arrow">
-            <img src="./icons/arrow.svg" class="arrow_icon" />
-          </button>
-        </div>
-        <div class="question_wrapper">
-          <p>Как быстро оформить заказ на доставку из Китая в Россию?</p>
-          <button class="button_arrow">
-            <img src="./icons/arrow.svg" class="arrow_icon" />
-          </button>
-        </div>
-        <details class="question_wrapper">
-          <summary>
-            <span>Можно ли через вас оплатить товар поставщику?</span>
-            <button class="button_arrow">
-              <img src="./icons/arrow.svg" class="arrow_icon" />
-            </button>
-          </summary>
-          <div class="answer">
-            <p>Да, мы предоставляем такую услугу, мы можем взять оплату товара в Китае на себя. Если у вас нет валютного
-              счёта, то можете оплатить товар в рублях на наш счет в России.</p>
+        <div class="item_question">
+          <div class="question_title">
+            <span>Как рассчитывается стоимость доставки?</span>
+            <span class="question_icon"><svg class="question_icon_svg" width="27" height="27" viewBox="0 0 27 27"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_241_99)">
+                  <path
+                    d="M0.421875 13.5C0.421875 6.27539 6.27539 0.421875 13.5 0.421875C20.7246 0.421875 26.5781 6.27539 26.5781 13.5C26.5781 20.7246 20.7246 26.5781 13.5 26.5781C6.27539 26.5781 0.421875 20.7246 0.421875 13.5ZM13.5 24.8906C19.7596 24.8906 24.8906 19.8229 24.8906 13.5C24.8906 7.24043 19.8229 2.10938 13.5 2.10938C7.24043 2.10938 2.10938 7.17715 2.10938 13.5C2.10938 19.7596 7.17715 24.8906 13.5 24.8906ZM14.1592 20.0127L20.2289 13.9482C20.4768 13.7004 20.4768 13.2996 20.2289 13.0518L14.1592 6.9873C13.9113 6.73945 13.5105 6.73945 13.2627 6.9873L12.8988 7.35117C12.651 7.59902 12.651 8.01035 12.9094 8.25293L17.4182 12.6035H7.38281C7.03477 12.6035 6.75 12.8883 6.75 13.2363V13.7637C6.75 14.1117 7.03477 14.3965 7.38281 14.3965H17.4182L12.9041 18.7471C12.651 18.9949 12.6457 19.401 12.8936 19.6488L13.2574 20.0127C13.5105 20.2605 13.9113 20.2605 14.1592 20.0127Z"
+                    fill="currentColor" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_241_99">
+                    <rect width="27" height="27" fill="white" transform="matrix(-1 0 0 1 27 0)" />
+                  </clipPath>
+                </defs>
+              </svg></span>
           </div>
-        </details>
-        <div class="question_wrapper">
-          <p>В чём особенность КАРГО доставки из Китая</p>
-          <button class="button_arrow">
-            <img src="./icons/arrow.svg" class="arrow_icon" />
-          </button>
+          <div class="question_content">
+            Да, мы предоставляем такую услугу, мы можем взять оплату товара в Китае на себя. Если у вас нет валютного
+            чёта, то можете оплатить товар в рублях на наш счет в России.
+          </div>
         </div>
-        <div class="question_wrapper">
-          <p>Какой срок доставки из Китая?</p>
-          <button class="button_arrow">
-            <img src="./icons/arrow.svg" class="arrow_icon" />
-          </button>
+        <div class="item_question">
+          <div class="question_title">
+            <span>Как происходит оплата за доставку груза?</span>
+            <span class="question_icon"><svg class="question_icon_svg" width="27" height="27" viewBox="0 0 27 27"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_241_99)">
+                  <path
+                    d="M0.421875 13.5C0.421875 6.27539 6.27539 0.421875 13.5 0.421875C20.7246 0.421875 26.5781 6.27539 26.5781 13.5C26.5781 20.7246 20.7246 26.5781 13.5 26.5781C6.27539 26.5781 0.421875 20.7246 0.421875 13.5ZM13.5 24.8906C19.7596 24.8906 24.8906 19.8229 24.8906 13.5C24.8906 7.24043 19.8229 2.10938 13.5 2.10938C7.24043 2.10938 2.10938 7.17715 2.10938 13.5C2.10938 19.7596 7.17715 24.8906 13.5 24.8906ZM14.1592 20.0127L20.2289 13.9482C20.4768 13.7004 20.4768 13.2996 20.2289 13.0518L14.1592 6.9873C13.9113 6.73945 13.5105 6.73945 13.2627 6.9873L12.8988 7.35117C12.651 7.59902 12.651 8.01035 12.9094 8.25293L17.4182 12.6035H7.38281C7.03477 12.6035 6.75 12.8883 6.75 13.2363V13.7637C6.75 14.1117 7.03477 14.3965 7.38281 14.3965H17.4182L12.9041 18.7471C12.651 18.9949 12.6457 19.401 12.8936 19.6488L13.2574 20.0127C13.5105 20.2605 13.9113 20.2605 14.1592 20.0127Z"
+                    fill="currentColor" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_241_99">
+                    <rect width="27" height="27" fill="white" transform="matrix(-1 0 0 1 27 0)" />
+                  </clipPath>
+                </defs>
+              </svg></span>
+          </div>
+          <div class="question_content">
+            Да, мы предоставляем такую услугу, мы можем взять оплату товара в Китае на себя. Если у вас нет валютного
+            чёта, то можете оплатить товар в рублях на наш счет в России.
+          </div>
+        </div>
+        <div class="item_question">
+          <div class="question_title">
+            <span>Как быстро оформить заказ на доставку из Китая в Россию?</span>
+            <span class="question_icon"><svg class="question_icon_svg" width="27" height="27" viewBox="0 0 27 27"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_241_99)">
+                  <path
+                    d="M0.421875 13.5C0.421875 6.27539 6.27539 0.421875 13.5 0.421875C20.7246 0.421875 26.5781 6.27539 26.5781 13.5C26.5781 20.7246 20.7246 26.5781 13.5 26.5781C6.27539 26.5781 0.421875 20.7246 0.421875 13.5ZM13.5 24.8906C19.7596 24.8906 24.8906 19.8229 24.8906 13.5C24.8906 7.24043 19.8229 2.10938 13.5 2.10938C7.24043 2.10938 2.10938 7.17715 2.10938 13.5C2.10938 19.7596 7.17715 24.8906 13.5 24.8906ZM14.1592 20.0127L20.2289 13.9482C20.4768 13.7004 20.4768 13.2996 20.2289 13.0518L14.1592 6.9873C13.9113 6.73945 13.5105 6.73945 13.2627 6.9873L12.8988 7.35117C12.651 7.59902 12.651 8.01035 12.9094 8.25293L17.4182 12.6035H7.38281C7.03477 12.6035 6.75 12.8883 6.75 13.2363V13.7637C6.75 14.1117 7.03477 14.3965 7.38281 14.3965H17.4182L12.9041 18.7471C12.651 18.9949 12.6457 19.401 12.8936 19.6488L13.2574 20.0127C13.5105 20.2605 13.9113 20.2605 14.1592 20.0127Z"
+                    fill="currentColor" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_241_99">
+                    <rect width="27" height="27" fill="white" transform="matrix(-1 0 0 1 27 0)" />
+                  </clipPath>
+                </defs>
+              </svg></span>
+          </div>
+          <div class="question_content">
+            Да, мы предоставляем такую услугу, мы можем взять оплату товара в Китае на себя. Если у вас нет валютного
+            чёта, то можете оплатить товар в рублях на наш счет в России.
+          </div>
+        </div>
+        <div class="item_question">
+          <div class="question_title">
+            <span>Можно ли через вас оплатить товар поставщику?</span>
+            <span class="question_icon"><svg class="question_icon_svg" width="27" height="27" viewBox="0 0 27 27"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_241_99)">
+                  <path
+                    d="M0.421875 13.5C0.421875 6.27539 6.27539 0.421875 13.5 0.421875C20.7246 0.421875 26.5781 6.27539 26.5781 13.5C26.5781 20.7246 20.7246 26.5781 13.5 26.5781C6.27539 26.5781 0.421875 20.7246 0.421875 13.5ZM13.5 24.8906C19.7596 24.8906 24.8906 19.8229 24.8906 13.5C24.8906 7.24043 19.8229 2.10938 13.5 2.10938C7.24043 2.10938 2.10938 7.17715 2.10938 13.5C2.10938 19.7596 7.17715 24.8906 13.5 24.8906ZM14.1592 20.0127L20.2289 13.9482C20.4768 13.7004 20.4768 13.2996 20.2289 13.0518L14.1592 6.9873C13.9113 6.73945 13.5105 6.73945 13.2627 6.9873L12.8988 7.35117C12.651 7.59902 12.651 8.01035 12.9094 8.25293L17.4182 12.6035H7.38281C7.03477 12.6035 6.75 12.8883 6.75 13.2363V13.7637C6.75 14.1117 7.03477 14.3965 7.38281 14.3965H17.4182L12.9041 18.7471C12.651 18.9949 12.6457 19.401 12.8936 19.6488L13.2574 20.0127C13.5105 20.2605 13.9113 20.2605 14.1592 20.0127Z"
+                    fill="currentColor" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_241_99">
+                    <rect width="27" height="27" fill="white" transform="matrix(-1 0 0 1 27 0)" />
+                  </clipPath>
+                </defs>
+              </svg></span>
+          </div>
+          <div class="question_content">
+            Да, мы предоставляем такую услугу, мы можем взять оплату товара в Китае на себя. Если у вас нет валютного
+            чёта, то можете оплатить товар в рублях на наш счет в России.
+          </div>
+        </div>
+        <div class="item_question">
+          <div class="question_title">
+            <span>В чём особенность КАРГО доставки из Китая</span>
+            <span class="question_icon"><svg class="question_icon_svg" width="27" height="27" viewBox="0 0 27 27"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_241_99)">
+                  <path
+                    d="M0.421875 13.5C0.421875 6.27539 6.27539 0.421875 13.5 0.421875C20.7246 0.421875 26.5781 6.27539 26.5781 13.5C26.5781 20.7246 20.7246 26.5781 13.5 26.5781C6.27539 26.5781 0.421875 20.7246 0.421875 13.5ZM13.5 24.8906C19.7596 24.8906 24.8906 19.8229 24.8906 13.5C24.8906 7.24043 19.8229 2.10938 13.5 2.10938C7.24043 2.10938 2.10938 7.17715 2.10938 13.5C2.10938 19.7596 7.17715 24.8906 13.5 24.8906ZM14.1592 20.0127L20.2289 13.9482C20.4768 13.7004 20.4768 13.2996 20.2289 13.0518L14.1592 6.9873C13.9113 6.73945 13.5105 6.73945 13.2627 6.9873L12.8988 7.35117C12.651 7.59902 12.651 8.01035 12.9094 8.25293L17.4182 12.6035H7.38281C7.03477 12.6035 6.75 12.8883 6.75 13.2363V13.7637C6.75 14.1117 7.03477 14.3965 7.38281 14.3965H17.4182L12.9041 18.7471C12.651 18.9949 12.6457 19.401 12.8936 19.6488L13.2574 20.0127C13.5105 20.2605 13.9113 20.2605 14.1592 20.0127Z"
+                    fill="currentColor" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_241_99">
+                    <rect width="27" height="27" fill="white" transform="matrix(-1 0 0 1 27 0)" />
+                  </clipPath>
+                </defs>
+              </svg></span>
+          </div>
+          <div class="question_content">
+            Да, мы предоставляем такую услугу, мы можем взять оплату товара в Китае на себя. Если у вас нет валютного
+            чёта, то можете оплатить товар в рублях на наш счет в России.
+          </div>
+        </div>
+        <div class="item_question">
+          <div class="question_title">
+            <span>Какой срок доставки из Китая?</span>
+            <span class="question_icon"><svg class="question_icon_svg" width="27" height="27" viewBox="0 0 27 27"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_241_99)">
+                  <path
+                    d="M0.421875 13.5C0.421875 6.27539 6.27539 0.421875 13.5 0.421875C20.7246 0.421875 26.5781 6.27539 26.5781 13.5C26.5781 20.7246 20.7246 26.5781 13.5 26.5781C6.27539 26.5781 0.421875 20.7246 0.421875 13.5ZM13.5 24.8906C19.7596 24.8906 24.8906 19.8229 24.8906 13.5C24.8906 7.24043 19.8229 2.10938 13.5 2.10938C7.24043 2.10938 2.10938 7.17715 2.10938 13.5C2.10938 19.7596 7.17715 24.8906 13.5 24.8906ZM14.1592 20.0127L20.2289 13.9482C20.4768 13.7004 20.4768 13.2996 20.2289 13.0518L14.1592 6.9873C13.9113 6.73945 13.5105 6.73945 13.2627 6.9873L12.8988 7.35117C12.651 7.59902 12.651 8.01035 12.9094 8.25293L17.4182 12.6035H7.38281C7.03477 12.6035 6.75 12.8883 6.75 13.2363V13.7637C6.75 14.1117 7.03477 14.3965 7.38281 14.3965H17.4182L12.9041 18.7471C12.651 18.9949 12.6457 19.401 12.8936 19.6488L13.2574 20.0127C13.5105 20.2605 13.9113 20.2605 14.1592 20.0127Z"
+                    fill="currentColor" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_241_99">
+                    <rect width="27" height="27" fill="white" transform="matrix(-1 0 0 1 27 0)" />
+                  </clipPath>
+                </defs>
+              </svg></span>
+          </div>
+          <div class="question_content">
+            Да, мы предоставляем такую услугу, мы можем взять оплату товара в Китае на себя. Если у вас нет валютного
+            чёта, то можете оплатить товар в рублях на наш счет в России.
+          </div>
         </div>
       </div>
 
-      <form class="form questions_form">
+      <form class="cost_calculation_form questions_form">
         <h3 class="form_title">Остались вопросы?</h3>
         <p class="form_desc"> Оставьте заявку и наш менеджер<br> ответит вам в ближайшее время</p>
         <div class="form_questions_wrapper">
@@ -473,11 +666,12 @@
   </section>
 
   <section class="partnerhsip">
-    <h2 class="page_title">
-      Готовы к сотрудничеству?
+    <div class="partnerhsip_title_wrapper">
+      <h2 class="partnerhsip_title" id="process_the_cargo">
+        Готовы к сотрудничеству?
+      </h2>
       <span class="partnerhsip_subtitle">Зарегистрируйте груз!</span>
-      <div class="title_underline" />
-    </h2>
+    </div>
     <div class="partnerhsip_desc_wrapper">
       <ul class="partnerhsip_desc">
         <li class="partnerhsip_desc_item"> Для того, чтобы начать сотрудничество, необходимо оформить груз указав
@@ -514,64 +708,74 @@
   </section>
 
   <footer class="footer">
-    <div class="main_inf_wrapper">
-      <img src="./icons/logo.png" class="logo_icon_footer" />
-      <ul class="main_inf">
-        <li>8(800)600-18-69</li>
-        <li><span class="footer_email">info@cargoasia.info</span></li>
-        <li>Адрес в Китае:</li>
-        <li>浙江省金华市义乌市后宅街道洪华小区5</li>
-        <li> 栋一单元一楼RT789库房 高建军 电话</li>
-        <li>15966660379</li>
-      </ul>
-      <div class="social_networks">
-        <a href="#"><img src="./icons/insta.svg" /></a>
-        <a href="#"><img src="./icons/vk.svg" /></a>
-        <a href="#"><img src="./icons/telegram.svg" /></a>
-      </div>
-    </div>
-    <div class="footer_links_wrapper">
-      <div class="footer_links">
-        <h4 class="footer_links_head">Грузоперевозки</h4>
-        <ul class="footer_links_items">
-          <li class="footer_links_item"><a href="#">Цены и сроки</a></li>
-          <li class="footer_links_item"><a href="#">Услуги</a></li>
-          <li class="footer_links_item"><a href="#">О компании</a></li>
-          <li class="footer_links_item"><a href="#">Контакты</a></li>
-          <li class="footer_links_item"><a href="#">Оформить груз</a></li>
+    <div class="footer_wrapper" id="contacts">
+      <div class="main_inf_wrapper">
+        <img src="./icons/logo.png" class="logo_icon_footer" />
+        <ul class="main_inf">
+          <li>8(800)600-18-69</li>
+          <li><span class="footer_email">info@cargoasia.info</span></li>
+          <li>Адрес в Китае:</li>
+          <li>浙江省金华市义乌市后宅街道洪华小区5</li>
+          <li> 栋一单元一楼RT789库房 高建军 电话</li>
+          <li>15966660379</li>
         </ul>
+        <div class="social_networks">
+          <a href="#"><img src="./icons/insta.svg" /></a>
+          <a href="#"><img src="./icons/vk.svg" /></a>
+          <a href="#"><img src="./icons/telegram.svg" /></a>
+        </div>
       </div>
+      <div class="footer_links_wrapper">
+        <div class="footer_links">
+          <h4 class="footer_links_head">Грузоперевозки</h4>
+          <ul class="footer_links_items">
+            <li class="footer_links_item"><a href="#prices_and_deadlines">Цены и сроки</a></li>
+            <li class="footer_links_item"><a href="#services">Услуги</a></li>
+            <li class="footer_links_item"><a href="#about_company">О компании</a></li>
+            <li class="footer_links_item"><a href="#contacts">Контакты</a></li>
+            <li class="footer_links_item"><a href="#process_the_cargo">Оформить груз</a></li>
+          </ul>
+        </div>
 
-      <div class="footer_links">
-        <h4 class="footer_links_head">Услуги</h4>
-        <ul class="footer_links_items">
-          <li class="footer_links_item"><a href="#">Выкуп товара</a></li>
-          <li class="footer_links_item"><a href="#">Страховка груза</a></li>
-          <li class="footer_links_item"><a href="#">Аренда склада</a></li>
-          <li class="footer_links_item"><a href="#">Перевод денежных средств</a></li>
-        </ul>
-      </div>
+        <div class="footer_links">
+          <h4 class="footer_links_head">Услуги</h4>
+          <ul class="footer_links_items">
+            <li class="footer_links_item"><a href="#">Выкуп товара</a></li>
+            <li class="footer_links_item"><a href="#">Страховка груза</a></li>
+            <li class="footer_links_item"><a href="#">Аренда склада</a></li>
+            <li class="footer_links_item"><a href="#">Перевод денежных средств</a></li>
+          </ul>
+        </div>
 
-      <div class="footer_links">
-        <h4 class="footer_links_head">Информация</h4>
-        <ul class="footer_links_items">
-          <li class="footer_links_item"><a href="#">Отзывы</a></li>
-          <li class="footer_links_item"><a href="#">Требования к грузу</a></li>
-          <li class="footer_links_item"><a href="#">Договор-оферта</a></li>
-          <li class="footer_links_item"><a href="#">Как заключить договор</a></li>
-          <li class="footer_links_item"><a href="#">Способы оплаты услуг</a></li>
-          <li class="footer_links_item"><a href="#">Документы</a></li>
-          <li class="footer_links_item"><a href="#">Статьи</a></li>
-        </ul>
+        <div class="footer_links">
+          <h4 class="footer_links_head">Информация</h4>
+          <ul class="footer_links_items">
+            <li class="footer_links_item"><a href="#">Отзывы</a></li>
+            <li class="footer_links_item"><a href="#">Требования к грузу</a></li>
+            <li class="footer_links_item"><a href="#">Договор-оферта</a></li>
+            <li class="footer_links_item"><a href="#">Как заключить договор</a></li>
+            <li class="footer_links_item"><a href="#">Способы оплаты услуг</a></li>
+            <li class="footer_links_item"><a href="#">Документы</a></li>
+            <li class="footer_links_item"><a href="#">Статьи</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </footer>
 
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
   <!-- Initialize Swiper -->
   <script>
+    const burger_menu_icon_wrapper = document.querySelector(".burger_menu_icon_wrapper");
+
+    burger_menu_icon_wrapper.addEventListener("click", () => {
+      const header_nav_menu_mobile_wrapper = document.querySelector(".header_nav_menu_mobile_wrapper");
+      header_nav_menu_mobile_wrapper.classList.toggle("active_menu");
+    });
+
     if (window.innerWidth > 1190) {
       var swiper = new Swiper(".mySwiper", {
         slidesPerView: 3,
@@ -614,5 +818,14 @@
         // },
       });
     }
+    const items = document.querySelectorAll(".item_question");
+
+    items.forEach((item) => {
+      item.querySelector(".question_title").addEventListener("click", () => {
+        item.classList.toggle("open");
+      });
+    });
   </script>
+
+
 </body>
